@@ -55,9 +55,13 @@
                     <td><?= $pack['kode']; ?></td>
                     <td><?= $pack['nama_barang']; ?></td>
                     <td><?= $pack['harga']; ?></td>
-                    <td onclick="javasript : return confirm('Yakin ingin dihapus?')"><?= anchor('C_barang/delete/' . $pack['kode'], '<div class="btn btn-danger"><i class="fa fa-trash"></i></div>'); ?>
-                    <td onclick="javasript : return confirm('Yakin ingin diubah?')"><?= anchor('C_barang/edit/' . $pack['kode'], '<div class="btn btn-primary"><i class="fa fa-edit"></i></div>'); ?>
+                    <td onclick="javasript : return confirm('Yakin ingin dihapus?')"><?= anchor('C_barang/delete/' . $pack['kode'], '<div class="btn btn-danger"><i class="fa fa-trash"></i></div>'); ?></td>
+                    <td>
+                        <div><?= anchor('C_barang/edit/' . $pack['kode'], '<div class="btn btn-primary"><i class="fa fa-edit"></i></div>'); ?></div>
                     </td>
+
+
+
                 </tr> <?php endforeach; ?>
         </table>
         <!-- Button trigger modal -->

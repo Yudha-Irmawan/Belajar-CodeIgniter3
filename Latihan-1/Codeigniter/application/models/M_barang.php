@@ -17,8 +17,14 @@ class M_barang extends CI_Model
         $this->db->delete($table);
     }
 
-    public function edit_data($data, $table)
+    public function edit_data($table, $data)
     {
-        return $this->db->get($table, $data);
+        return $this->db->get_where($data, $table);
+    }
+
+    public function ubah_data($where, $data, $table)
+    {
+        $this->db->where($where);
+        $this->db->update($table, $data);
     }
 }

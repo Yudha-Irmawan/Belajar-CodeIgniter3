@@ -38,12 +38,30 @@ class C_barang extends CI_Controller
 
     public function edit($kode)
     {
-        $where = array(
+        $kunci = array(
             'kode' => $kode
         );
-        $data['produk_barang'] = $this->load->model('M_barang');
-        $this->M_barang->edit_data($where, 'db_barang')->result_array();
+        $this->load->model('M_barang');
+        $data['produk'] = $this->M_barang->edit_data($kunci, 'db_barang')->result();
 
-        $this->load->view('template/edit', $data);
+        $this->load->view('template/formUpdate', $data);
+    }
+
+
+    public function update()
+    {
+        $kode = $this->input->POST('code');
+        $nama = $this->input->POST('barang');
+        $harga = $this->input->POST('harga');
+
+        $data = array(
+            'kode'            => $kode,
+            'nama_barang'     => $nama,
+            'harga'           => $harga
+        );
+        $kunci = array('kode' => $kode);
+        $this->load->model('M_barang');
+        $this->M_barang->ubah_data($kunci, $data, 'db_barang');
+        redirect('C_barang/index');
     }
 }
