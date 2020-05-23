@@ -9,7 +9,7 @@ class C_barang extends CI_Controller
         $this->load->view('template/dashboard', $data);
     }
 
-    public function tambah_aksi()
+    public function add()
     {
         $kode = $this->input->POST('code');
         $barang = $this->input->POST('barang');
@@ -22,7 +22,7 @@ class C_barang extends CI_Controller
         );
 
         $this->load->model('M_barang');
-        $this->M_barang->tambah_data($data, 'db_barang');
+        $this->M_barang->add_data($data, 'db_barang');
         redirect('C_barang/index');
     }
 

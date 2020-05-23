@@ -59,10 +59,8 @@
                     <td>
                         <div><?= anchor('C_barang/edit/' . $pack['kode'], '<div class="btn btn-primary"><i class="fa fa-edit"></i></div>'); ?></div>
                     </td>
-
-
-
-                </tr> <?php endforeach; ?>
+                </tr>
+            <?php endforeach; ?>
         </table>
         <!-- Button trigger modal -->
 
@@ -78,7 +76,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form method="POST" action="<?= base_url() . 'C_barang/tambah_aksi'; ?>">
+                        <form method="POST" action="<?= base_url() . 'C_barang/add'; ?>">
                             <div class="form-group">
                                 <label for="">Kode</label>
                                 <input type="text" class="form-control" name="code" placeholder="Masukan Code">

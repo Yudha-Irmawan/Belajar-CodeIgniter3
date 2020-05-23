@@ -6,7 +6,7 @@ class M_barang extends CI_Model
         return $this->db->get('db_barang')->result_array();
     }
 
-    public function tambah_data($table, $data)
+    public function add_data($table, $data)
     {
         $this->db->insert($data, $table);
     }
