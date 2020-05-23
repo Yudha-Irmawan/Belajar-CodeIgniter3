@@ -22,7 +22,7 @@ class M_barang extends CI_Model
         return $this->db->get_where($data, $table);
     }
 
-    public function ubah_data($where, $data, $table)
+    public function update_data($where, $data, $table)
     {
         $this->db->where($where);
         $this->db->update($table, $data);

@@ -61,7 +61,7 @@ class C_barang extends CI_Controller
         );
         $kunci = array('kode' => $kode);
         $this->load->model('M_barang');
-        $this->M_barang->ubah_data($kunci, $data, 'db_barang');
+        $this->M_barang->update_data($kunci, $data, 'db_barang');
         redirect('C_barang/index');
     }
 }
