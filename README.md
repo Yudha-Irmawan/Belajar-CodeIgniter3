@@ -8,3 +8,7 @@ MVC membagi aplikasi ke dalam tiga bagian fungsional: model, view, dan controlle
 2. View merupakan bagian yang menangani kode-kode untuk tampilan.
 3. Controller merupakan bagian yang mengatur hubungan antara bagian model dan bagian view, controller berfungsi untuk menerima request dan data dari user kemudian menentukan apa yang akan diproses oleh aplikasi.
 
+git fetch origin master:tmp
+git rebase tmp
+git push origin HEAD:master
+git branch -D tmp
