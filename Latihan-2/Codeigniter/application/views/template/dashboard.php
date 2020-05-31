@@ -16,24 +16,25 @@
     <section class="content">
         <div class="container-fluid">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                + Tambah
-            </button><br><br>
-            <table class="table table-bordered">
-                <tr>
+                <i class="fas fa-plus"></i> Tambah
+            </button>
+            <table class="table">
+                <tr class="bg-info">
                     <th>No</th>
                     <th>Kode</th>
                     <th>Nama Barang</th>
                     <th>Satuan</th>
                     <th>jumlah</th>
                     <th>Harga</th>
-                    <th colspan="2">Aksi</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
                 </tr>
 
                 <?php
                 $no = 1;
                 foreach ($produk as $pack) : ?>
 
-                    <tr>
+                    <tr class="table-secondary">
                         <td><?= $no++; ?></td>
                         <td><?= $pack['kode']; ?></td>
                         <td><?= $pack['nama_barang']; ?></td>
@@ -70,7 +71,13 @@
                                     <input type="text" class="form-control" name="barang" placeholder="Nama Barang">
 
                                     <label for="">Satuan</label>
-                                    <input type="text" class="form-control" name="satuan" placeholder="Satuan Barang">
+                                    <select class="form-control" name="satuan" id="exampleFormControlSelect1">
+                                        <option value="Satuan">Satuan</option>
+                                        <option value="Unit">Unit</option>
+                                        <option value="Pasang">Pasang</option>
+                                        <option value="Set">Set</option>
+                                    </select>
+                                    <!-- <input type="text" class="form-control" name="satuan" placeholder="Satuan Barang"> -->
 
                                     <label for="">Jumlah</label>
                                     <input type="text" class="form-control" name="jumlah" placeholder="Jumlah Barang">
@@ -80,7 +87,7 @@
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary">Save</button>
                                 </div>
                             </form>

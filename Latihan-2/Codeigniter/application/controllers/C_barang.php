@@ -51,7 +51,10 @@ class C_barang extends CI_Controller
         $this->load->model('M_barang');
         $data['produk'] = $this->M_barang->edit_data($kunci, 'tb_barang')->result();
 
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
         $this->load->view('template/formUpdate', $data);
+        $this->load->view('template/footer');
     }
 
 
